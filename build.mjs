@@ -13,6 +13,8 @@ const PAGES = [
   { out: 'dai1/sheet', src: '第1回/作業シート.html', title: 'AI研修 第1回 作業シート', art: 'BZpCMeT8ysfMr2eduMZFPs' },
   { out: 'dai2/sheet', src: '第2回/作業シート.html', title: 'AI研修 第2回 作業シート', art: 'XFEkrm9xrRpmQSQc8Uhmg5' },
   { out: 'dai2/slide', src: '第2回/スライド.html', title: 'AI研修 第2回 スライド', art: '1VaMNwSZcuVDHDBy8ZTiaS' },
+  { out: 'dai2', src: '第2回まとめ/index.html', title: 'AI研修 第2回のまとめ', art: 'PJsMFLmm7HsCD5cgE1Meya' },
+  { out: 'jcxas', src: 'JCXAS構想/index.html', title: 'JCXASの構想', art: 'Ui7ouNuagyieLTJ43da1qo' },
 ];
 const b64 = u8 => Buffer.from(u8).toString('base64');
 const salt = crypto.getRandomValues(new Uint8Array(16));
