@@ -15,6 +15,8 @@ const PAGES = [
   { out: 'dai2/slide', src: '第2回/スライド.html', title: 'AI研修 第2回 スライド', art: '1VaMNwSZcuVDHDBy8ZTiaS' },
   { out: 'dai2', src: '第2回まとめ/index.html', title: 'AI研修 第2回のまとめ', art: 'PJsMFLmm7HsCD5cgE1Meya' },
   { out: 'jcxas', src: 'JCXAS構想/index.html', title: 'JCXASの構想', art: 'Ui7ouNuagyieLTJ43da1qo' },
+  { out: 'dai3/sheet', src: '第3回/作業シート.html', title: 'AI研修 第3回 作業シート', art: 'NArZLAmp6PvPZpgxCcvArM' },
+  { out: 'dai3/slide', src: '第3回/スライド.html', title: 'AI研修 第3回 スライド', art: 'DwLSyHvEU4tTJnUHvoD3Fo' },
 ];
 const b64 = u8 => Buffer.from(u8).toString('base64');
 const salt = crypto.getRandomValues(new Uint8Array(16));
