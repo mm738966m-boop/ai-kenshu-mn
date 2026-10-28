@@ -17,6 +17,7 @@ const PAGES = [
   { out: 'jcxas', src: 'JCXAS構想/index.html', title: 'JCXASの構想', art: 'Ui7ouNuagyieLTJ43da1qo' },
   { out: 'dai3/sheet', src: '第3回/作業シート.html', title: 'AI研修 第3回 作業シート', art: 'NArZLAmp6PvPZpgxCcvArM' },
   { out: 'dai3/slide', src: '第3回/スライド.html', title: 'AI研修 第3回 スライド', art: 'DwLSyHvEU4tTJnUHvoD3Fo' },
+  { out: 'dai3', src: '第3回まとめ/index.html', title: 'AI研修 第3回のまとめ', art: '8B4tiGY8r2irg9QigwVeHP' },
 ];
 const b64 = u8 => Buffer.from(u8).toString('base64');
 const salt = crypto.getRandomValues(new Uint8Array(16));
