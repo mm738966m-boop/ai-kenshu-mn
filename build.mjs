@@ -36,10 +36,10 @@ for (const p of PAGES) {
   const doc = '<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow,noarchive"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body>' + h + '</body></html>';
   const C = await enc(doc);
   const shell = `<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="robots" content="noindex,nofollow,noarchive"><title>AI研修の資料</title>
-<meta property="og:title" content="AI研修の資料"><meta property="og:description" content="リンクを知っている方だけが見られるページです"><meta property="og:image" content="${BASE}img/mascot_invite.webp">
+<meta name="robots" content="noindex,nofollow,noarchive"><title>${p.title}</title>
+<meta property="og:title" content="${p.title}"><meta property="og:description" content="リンクを知っている方だけが見られるページです"><meta property="og:image" content="${BASE}img/mascot_invite.webp">
 <style>body{margin:0;font-family:"Hiragino Sans","Yu Gothic",sans-serif;background:#EEF6F7;color:#1C3236}#g{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;text-align:center}#g .in{max-width:420px;background:#fff;border-radius:20px;padding:26px 22px;border:1px solid #D5E4E6}#g img{width:110px}#g p{font-size:17px;line-height:1.8;color:#4A6468}#g input{width:100%;box-sizing:border-box;font-size:18px;padding:10px;border:2px solid #D5E4E6;border-radius:10px}#g button{width:100%;margin-top:10px;font-size:18px;font-weight:800;color:#fff;background:#0E7C86;border:0;border-radius:10px;padding:12px}#m{color:#B4442F;font-weight:700;min-height:1.5em}</style></head>
-<body><div id="g"><form class="in" id="f"><img src="${BASE}img/mascot_invite.webp" alt=""><p id="t">ひらいています…</p><div id="ask" hidden><p>お送りしたリンクから開いてください。<br>合言葉があれば、こちらに。</p><input id="pw" autocomplete="off"><button>ひらく</button></div><div id="m"></div></form></div>
+<body><div id="g"><form class="in" id="f"><img src="${BASE}img/mascot_invite.webp" alt=""><p id="t">ひらいています…</p><div id="ask" hidden><p>お送りしたリンクから開いてください。<br>リンクの「k=」のあとの文字があれば、こちらに。</p><input id="pw" autocomplete="off"><button>ひらく</button></div><div id="m"></div></form></div>
 <script>
 const SALT="${b64(salt)}",C="${C}";const u=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
 async function open_(pw){const k0=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
@@ -49,7 +49,7 @@ const html=new TextDecoder().decode(buf);document.open();document.write(html);do
 const m=location.hash.match(/k=([^&]+)/);
 function ask(msg){document.getElementById('t').hidden=true;document.getElementById('ask').hidden=false;document.getElementById('m').textContent=msg||''}
 if(m){open_(decodeURIComponent(m[1])).catch(()=>ask('リンクが正しくないようです。もう一度お送りしたリンクから開いてください。'))}else ask();
-document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();open_(document.getElementById('pw').value.trim()).catch(()=>ask('合言葉が違うようです。'))});
+document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();open_(document.getElementById('pw').value.trim()).catch(()=>ask('文字が違うようです。'))});
 </script></body></html>`;
   mkdirSync(p.out, { recursive: true });
   writeFileSync(p.out + '/index.html', shell);
