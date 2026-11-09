@@ -22,6 +22,8 @@ const PAGES = [
   { out: 'jcxas/lp-kit', src: 'JCXAS入会LP_キット/index.html', title: 'JCXAS入会ページの直し方', art: 'none-jcxas-lp-kit' },
   { out: 'jcxas/join', src: 'JCXAS入会LP_デモ/index.html', title: 'JCXAS 入会のご案内（デモ）', art: 'none-jcxas-join-demo' },
   { out: 'dai4', src: '第4回まとめ/index.html', title: 'AI研修 第4回のまとめ', art: 'none-dai4-matome' },
+  { out: 'review', src: '口コミのお願い/index.html', title: '全4回のふりかえり', art: 'none-review' },
+  { out: 'review/medal', src: '口コミのお願い/index_medal.html', title: '全4回のふりかえり', art: 'none-review-medal' },
   { out: 'dai4/slide', src: '第4回/スライド.html', title: 'AI研修 第4回 スライド', art: 'SK2jWGAhCwb8hResBWjy2i' },
 ];
 const b64 = u8 => Buffer.from(u8).toString('base64');
